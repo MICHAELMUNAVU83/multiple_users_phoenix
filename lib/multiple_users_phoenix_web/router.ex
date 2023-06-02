@@ -22,6 +22,7 @@ defmodule MultipleUsersPhoenixWeb.Router do
 
     get("/", PageController, :index)
     get("/logistic_dashboard", LogisticDashboardController, :index)
+    get("/farmer_dashboard", FarmerDashboardController, :index)
     resources("/posts", PostController)
   end
 
@@ -66,7 +67,7 @@ defmodule MultipleUsersPhoenixWeb.Router do
 
     get("/users/register", UserRegistrationController, :new)
     post("/users/register", UserRegistrationController, :create)
-    get("/users/log_in", UserSessionController, :new)
+    get("/users/log_in", UserSessionController, :newfarmer)
     post("/users/log_in", UserSessionController, :create)
     get("/users/reset_password", UserResetPasswordController, :new)
     post("/users/reset_password", UserResetPasswordController, :create)
@@ -75,7 +76,7 @@ defmodule MultipleUsersPhoenixWeb.Router do
   end
 
   scope "/", MultipleUsersPhoenixWeb do
-    pipe_through([:browser, :require_authenticated_user])
+    pipe_through([:browser, :require_authenticated_farmer])
 
     get("/users/settings", UserSettingsController, :edit)
     put("/users/settings", UserSettingsController, :update)

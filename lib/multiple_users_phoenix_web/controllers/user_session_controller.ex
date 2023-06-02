@@ -4,8 +4,8 @@ defmodule MultipleUsersPhoenixWeb.UserSessionController do
   alias MultipleUsersPhoenix.Accounts
   alias MultipleUsersPhoenixWeb.UserAuth
 
-  def new(conn, _params) do
-    render(conn, "new.html", error_message: nil)
+  def newfarmer(conn, _params) do
+    render(conn, "newfarmer.html", error_message: nil)
   end
 
   def create(conn, %{"user" => user_params}) do
