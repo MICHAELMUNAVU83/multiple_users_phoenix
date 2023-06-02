@@ -2,8 +2,6 @@ import Config
 
 # Configure your database
 config :multiple_users_phoenix, MultipleUsersPhoenix.Repo,
-  username: "postgres",
-  password: "postgres",
   hostname: "localhost",
   database: "multiple_users_phoenix_dev",
   stacktrace: true,
